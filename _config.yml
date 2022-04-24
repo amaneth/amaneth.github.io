@@ -1,6 +1,6 @@
 title:              Machine Learning notes
 email:              awassie@aimsammi.org
-description:        
+description:        .
 author:             Aman Kassahun
 baseurl:            ""
 url:                "https://amaneth.github.io"
@@ -11,7 +11,7 @@ github_username:  amaneth
 facebook_username:  
 instagram_username:  
 linkedin_username: aman-kassahun
-theme: jekyll-theme-clean-blog
+
 # Add your google-analytics ID here to activate google analytics
 google_analytics:   UA-XXXXXXXXX-X # out your google-analytics code
 
