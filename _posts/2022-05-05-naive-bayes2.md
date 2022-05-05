@@ -122,7 +122,7 @@ After adding the Laplacian smoothing value k to the Count matrix(the operation i
   def predict(self, X, batch_size=500):
     #returns the prediction of categories for a test document
     batches = len(X)//batch_size
-    if (len(X)//batch_size)!=0:
+    if (len(X)%batch_size)!=0:
       batches=batches+1
     predictions=[]
     for batch in range(batches):
