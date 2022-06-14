@@ -60,7 +60,7 @@ Where ${y}$ is the label of the class and ${P(N|W)}$ is computed similarly as ${
 <p style="text-align: center;">${\log {(P(S|W))}&ensp; {\propto} &ensp; \sum_{i=1}^n \log{P(w_i|S)} + \log{P(S)}}$</p>
 
 <p style="text-align: justify;">Here we have seen the multinomial Naive Bayes classifier in a simple spam filter use case which is a binary classification but the principle is the same for multicalssification case. 
-I hope you enjoyed it. Next we'll see the implementation of multinomial Bayes classifier. Check part-2 here.
+I hope you enjoyed it. Next we'll see the implementation of multinomial Bayes classifier. Check [Part 1](https://amaneth.github.io/2022/05/03/naive-bayes.html) here.
 
 
 
