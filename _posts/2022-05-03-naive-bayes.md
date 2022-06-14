@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Aman Mutinomial Naive Bayes Classifier from scratch(Part 1)
+title: Mutinomial Naive Bayes Classifier from scratch(Part 1)
 subtitle: 
 date: 2022-05-03
 tags: [machine learning, deep learning, courses, coursera, Amharic]
@@ -21,8 +21,14 @@ Our interest in the Naive byes classifier is to find <strong>the probability of 
 
  For our case the Bayes theorem becomes 
  <center>${P(S|w_{1},w_{2},w_{3}...w_{n})=\frac{P(w_{1},w_{2},w_{3}...w_{n}|S)\cdot P(S)}{P(w_{1},w_{2},w_{3}...w_{n})}}$</center>
+ <center>${P(N|w_{1},w_{2},w_{3}...w_{n})=\frac{P(w_{1},w_{2},w_{3}...w_{n}|S)\cdot P(S)}{P(w_{1},w_{2},w_{3}...w_{n})}}$</center>
 
- <p style="text-align: justify;">Where ${P(S|w_{1},w_{2},w_{3}...w_{n})}$ is the probalblity of the document being spam given its words are ${w_{1},w_{2},w_{3}...w_{n}}$ . Assuming independency this can be written as</p>
+ <p style="text-align: justify;">Where ${P(S|w_{1},w_{2},w_{3}...w_{n})}$ is the probalblity of the document being spam given its words are ${w_{1},w_{2},w_{3}...w_{n}}$   and ${P(N|w_{1},w_{2},w_{3}...w_{n})}$ is the probalblity of the document being normal(not spam) given its words are ${w_{1},w_{2},w_{3}...w_{n}}$ .
+ As you see ${P(w_{1}) \cdot P(w_{2}) \cdot P(w_{3})...P(w_{n})}$ is the same for both class probablities, We can remove it, since it's like a scaling factor which doesn't affect the comparsion(argmax) between the class probabilities we do later. 
+
+ https://github.com/Xcceleran-do/snetrecommender/blob/ca9870202adb914aa713aa41ca3b7bcfa4191b63/recommender/views.py#L205-L208
+
+ Assuming independency this can be written as</p>
 
  
   
@@ -30,7 +36,7 @@ Our interest in the Naive byes classifier is to find <strong>the probability of 
 
 ${P(S|w_{1},w_{2},w_{3}...w_{n})=\frac{P(w_{1}|S)\cdot P(w_{2}|S) \cdot P(w_{3}|S) ... P(w_{n}|S) \cdot P(S)}{P(w_{1}) \cdot P(w_{2}) \cdot P(w_{3})...P(w_{n})}}$</p>
  
-<p style="text-align: justify;">${P(w_{1}) \cdot P(w_{2}) \cdot P(w_{3})...P(w_{n})}$ is constant for every document in the documents we have. We can remove it, since it's like a scaling factor that doesn't change anything in the learning.</p>
+
 
 <p style="text-align: center;">${P(S|w_{1},w_{2},w_{3}...w_{n})&ensp; {\propto} &ensp; P(w_{1}|S)\cdot P(w_{2}|S) \cdot P(w_{3}|S) ... P(w_{n}|S) \cdot P(S)}$</p>
 
